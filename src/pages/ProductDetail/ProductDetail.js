@@ -1,11 +1,7 @@
+import ProductDetails from "../../components/ProductDetails/ProductDetails";
 
-import ProductDetails from "../../components/ProductDetails/ProductDetails"
-
-function ProductDetailPage(){
-
-
-
-    return <div><ProductDetails/></div>
+function ProductDetailPage() {
+  return <ProductDetails />;
 }
 
-export default ProductDetailPage
+export default ProductDetailPage;

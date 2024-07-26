@@ -1,6 +1,7 @@
+@use "../../styles/variables" as color;
+
 .search-results {
-  width: 100%;
-  max-width: 1200px;
+  max-width: 70vw;
 }
 
 .breadcrumb {
@@ -14,24 +15,24 @@
 
 .result-item {
   display: flex;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: color.$background-color-item;
+  border: 1px solid color.$border-color-item;
   border-radius: 4px;
   overflow: hidden;
   width: 100%;
   position: relative;
-  padding: 2rem
 }
 
 .item-link {
   display: flex;
   text-decoration: none;
   color: inherit;
-  width: 1000px;
+  padding: 2rem;
 }
 
 .item-image {
-  width: 200px; 
+  width: 12.5rem;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -39,11 +40,10 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
-
 }
 
 .item-price {
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
 }
 
 .item-title {
@@ -52,12 +52,12 @@
 }
 
 .free-shipping {
-    color: green;
-    font-size: 0.9rem;
-    position: absolute;
-    right: 1rem;
-    margin-right: 1rem;
-  }
+  color: color.$free-shipping-color;
+  font-size: 0.9rem;
+  position: absolute;
+  right: 1rem;
+  margin-right: 1rem;
+}
 
 .breadcrumb-container {
   align-items: flex-start;
@@ -79,6 +79,9 @@
 @media (max-width: 745px) {
   .breadcrumb-container {
     min-width: 350px;
+  }
+  .item-link {
+    flex-wrap: wrap;
   }
 }
 

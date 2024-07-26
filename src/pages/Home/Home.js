@@ -1,5 +1,5 @@
 import React from "react";
-
+import SearchResultPage from "../SearchResult/SearchResult";
 
 
 function Home() {
@@ -7,7 +7,7 @@ function Home() {
     <div className="home">
       <main>
         <section className="itens">
-          {/* Conteúdo relevante adicional pode ser adicionado aqui */}
+         <SearchResultPage/>
         </section>
       </main>
     </div>
