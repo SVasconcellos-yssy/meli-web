@@ -3,7 +3,7 @@
 .product-detail {
   display: flex;
   align-items: center;
-  max-width: 70vw
+  width: 60vw
  
 }
 
@@ -39,7 +39,7 @@
 }
 
 .main-container-description {
-  max-width: 60vw;
+  width: 60vw;
   display: flex;
   flex-wrap: wrap;
   background-color: color.$background-color-item;
@@ -75,7 +75,7 @@
 
 .containerCard {
   display: flex;
-  max-width: 70vw
+  width: 70vw
 }
 
 @media (max-width: 800px) {

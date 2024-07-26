@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { useBreadcrumbUpdater } from "../../hooks/useBreadcrumbUpdater";
 import { useGetQueryItems } from "./../../hooks/react-query/useGetQueryItems";
 import Skeleton from "../Skeleton/Skeleton";
@@ -23,13 +24,31 @@ function SearchResults() {
   if (isLoading) {
     return (
       <div className="loading-container">
-        <Skeleton width="50vw" height="100vh" />
+        <Skeleton width="60vw" height="100vh" />
       </div>
     );
   }
 
+  const title = query
+    ? `Resultados para "${query}" - Mercado Livre`
+    : "Resultados da busca - Mercado Livre";
+  const description = data?.items
+    ? `Encontre os melhores resultados para "${query}" no Mercado Livre.`
+    : "Nenhum resultado encontrado.";
+
   return (
     <div className="search-results">
+      <Helmet>
+        <title>{title}</title>
+        <meta property="og:title" content={title} />
+        <meta name="description" content={description} />
+        <meta
+          name="keywords"
+          content={query ? `${query}, compra, busca` : "compra, busca"}
+        />
+        <meta property="og:type" content="product" />
+        <meta property="og:url" content={window?.location?.href} />
+      </Helmet>
       <div className="results">
         {data?.items ? (
           data?.items.map((item) => (

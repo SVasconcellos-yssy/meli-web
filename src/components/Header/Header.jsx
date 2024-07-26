@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Header.scss';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Header.scss";
 
 function Header() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const navigate = useNavigate();
-
-
 
   const handleSearch = () => {
     if (query) {
@@ -14,10 +12,20 @@ function Header() {
     }
   };
 
+  const handleLogoClick = () => {
+    navigate("/");
+  };
+
   return (
     <header className="header">
       <div className="header__search-container">
-        <img src="/logo.png" alt="Logo" className="header__logo" />
+        <img
+          src="/logo.png"
+          alt="Logo"
+          className="header__logo"
+          onClick={handleLogoClick}
+          style={{ cursor: "pointer" }}
+        />
         <input
           type="text"
           placeholder="Buscar..."
